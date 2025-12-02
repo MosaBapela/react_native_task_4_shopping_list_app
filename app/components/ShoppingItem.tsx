@@ -48,10 +48,10 @@ export default function ShoppingItem({ item, onEdit }: ShoppingItemProps) {
           {item.name}
         </Text>
         <Text style={styles.info}>
-          Qty: {item.quantity} {item.unit} • ${item.price.toFixed(2)}/{item.unit}
+          Qty: {item.quantity} {item.unit} • R{item.price.toFixed(2)}/{item.unit}
         </Text>
         <Text style={styles.total}>
-          Total: ${(item.quantity * item.price).toFixed(2)}
+          Total: R{(item.quantity * item.price).toFixed(2)}
         </Text>
       </View>
 

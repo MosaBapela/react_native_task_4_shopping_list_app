@@ -110,7 +110,7 @@ export default function ShoppingListScreen({ navigation, route }: Props) {
         <View style={styles.summaryDivider} />
         <View style={styles.summaryItem}>
           <Text style={styles.summaryLabel}>Total Cost</Text>
-          <Text style={styles.summaryValue}>${totalCost.toFixed(2)}</Text>
+          <Text style={styles.summaryValue}>R{totalCost.toFixed(2)}</Text>
         </View>
       </View>
 

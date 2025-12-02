@@ -150,7 +150,7 @@ export default function EditItemModal({ item, onClose }: EditItemModalProps) {
             <View style={styles.formGroup}>
               <Text style={styles.label}>Price per {unit} *</Text>
               <View style={styles.priceInputContainer}>
-                <Text style={styles.currencySymbol}>$</Text>
+                <Text style={styles.currencySymbol}>R</Text>
                 <TextInput
                   style={styles.priceInput}
                   placeholder="0.00"
@@ -177,7 +177,7 @@ export default function EditItemModal({ item, onClose }: EditItemModalProps) {
                 <View>
                   <Text style={styles.totalLabel}>New Total:</Text>
                   <Text style={styles.totalValue}>
-                    ${(parseFloat(quantity) * parseFloat(price)).toFixed(2)}
+                    R{(parseFloat(quantity) * parseFloat(price)).toFixed(2)}
                   </Text>
                 </View>
               </View>
