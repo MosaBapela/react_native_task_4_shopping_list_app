@@ -25,6 +25,10 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
+## Download APK
+
+You can download the APK file from [this link](https://expo.dev/accounts/mossman2/projects/react_native_task_4_shopping_list_app/builds/3f78f915-9532-4ffc-9050-a197235e4da4).
+
 ## Get a fresh project
 
 When you're ready, run:
