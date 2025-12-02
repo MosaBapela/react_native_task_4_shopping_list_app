@@ -1,5 +1,5 @@
 
-import { NavigationContainer } from '@react-navigation/native';
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import CategoriesScreen from '../screens/CategoriesScreen';
@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function AppNavigator() {
   return (
-    <NavigationContainer>
+    
       <Stack.Navigator
         initialRouteName="Categories"
         screenOptions={{
@@ -24,6 +24,6 @@ export default function AppNavigator() {
         <Stack.Screen name="Categories" component={CategoriesScreen} />
         <Stack.Screen name="ShoppingList" component={ShoppingListScreen} />
       </Stack.Navigator>
-    </NavigationContainer>
+    
   );
 }
