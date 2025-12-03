@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import {
-    Alert,
-    KeyboardAvoidingView,
-    Modal,
-    Platform,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  Alert,
+  KeyboardAvoidingView,
+  Modal,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { BORDER_RADIUS, COLORS, FONT_SIZES, SPACING } from '../constants/theme';
@@ -168,7 +168,7 @@ export default function EditItemModal({ item, onClose }: EditItemModalProps) {
                 <View>
                   <Text style={styles.totalLabel}>Original Total:</Text>
                   <Text style={styles.oldTotal}>
-                    ${(item.quantity * item.price).toFixed(2)}
+                    R{(item.quantity * item.price).toFixed(2)}
                   </Text>
                 </View>
                 <View style={styles.arrow}>

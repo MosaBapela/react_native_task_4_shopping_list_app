@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import {
-    Alert,
-    KeyboardAvoidingView,
-    Modal,
-    Platform,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  Alert,
+  KeyboardAvoidingView,
+  Modal,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { BORDER_RADIUS, COLORS, FONT_SIZES, SPACING } from '../constants/theme';
@@ -147,7 +147,7 @@ export default function AddItemForm({ category, onClose }: AddItemFormProps) {
             <View style={styles.formGroup}>
               <Text style={styles.label}>Price per {unit} *</Text>
               <View style={styles.priceInputContainer}>
-                <Text style={styles.currencySymbol}>$</Text>
+                <Text style={styles.currencySymbol}>R</Text>
                 <TextInput
                   style={styles.priceInput}
                   placeholder="0.00"
@@ -164,7 +164,7 @@ export default function AddItemForm({ category, onClose }: AddItemFormProps) {
               <View style={styles.totalPreview}>
                 <Text style={styles.totalLabel}>Estimated Total:</Text>
                 <Text style={styles.totalValue}>
-                  ${(parseFloat(quantity) * parseFloat(price)).toFixed(2)}
+                  R{(parseFloat(quantity) * parseFloat(price)).toFixed(2)}
                 </Text>
               </View>
             )}
