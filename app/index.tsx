@@ -2,8 +2,8 @@ import React from "react";
 import { ActivityIndicator, View } from "react-native";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import AppNavigator from "./navigation/AppNavigator";
-import { persistor, store } from "./redux/store";
+import AppNavigator from "../src/navigation/AppNavigator";
+import { persistor, store } from "../src/redux/store";
 
 export default function App() {
   return (
