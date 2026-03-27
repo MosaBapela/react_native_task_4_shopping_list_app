@@ -2,19 +2,19 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React, { useEffect, useRef } from "react";
 import {
-    Animated,
-    Dimensions,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Animated,
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import {
-    BORDER_RADIUS,
-    COLORS,
-    FONT_SIZES,
-    SHADOW,
-    SPACING,
+  BORDER_RADIUS,
+  COLORS,
+  FONT_SIZES,
+  SHADOW,
+  SPACING,
 } from "../constants/theme";
 import { RootStackParamList } from "../navigation/AppNavigator";
 
@@ -31,7 +31,6 @@ const FEATURES = [
 export default function WelcomeScreen() {
   const navigation = useNavigation<WelcomeNav>();
 
-  // Animations
   const fadeTop = useRef(new Animated.Value(0)).current;
   const slideUp = useRef(new Animated.Value(40)).current;
   const fadeCards = useRef(new Animated.Value(0)).current;
@@ -66,11 +65,9 @@ export default function WelcomeScreen() {
 
   return (
     <View style={styles.container}>
-      {/* Background blobs */}
       <View style={styles.blobTL} />
       <View style={styles.blobBR} />
 
-      {/* Hero */}
       <Animated.View
         style={[
           styles.hero,
@@ -88,7 +85,6 @@ export default function WelcomeScreen() {
         </Text>
       </Animated.View>
 
-      {/* Feature cards */}
       <Animated.View style={[styles.features, { opacity: fadeCards }]}>
         {FEATURES.map((f) => (
           <View key={f.label} style={styles.featureCard}>
@@ -101,7 +97,6 @@ export default function WelcomeScreen() {
         ))}
       </Animated.View>
 
-      {/* CTA */}
       <Animated.View style={[styles.cta, { opacity: fadeCta }]}>
         <TouchableOpacity
           style={styles.primaryBtn}
@@ -127,7 +122,6 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
 
-  // Decorative blobs
   blobTL: {
     position: "absolute",
     top: -80,
@@ -149,7 +143,6 @@ const styles = StyleSheet.create({
     opacity: 0.12,
   },
 
-  // Hero
   hero: { alignItems: "center", marginTop: SPACING.xl },
   iconWrapper: {
     width: 100,
@@ -185,7 +178,6 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
 
-  // Features
   features: { width: "100%", gap: SPACING.sm },
   featureCard: {
     flexDirection: "row",
@@ -205,7 +197,6 @@ const styles = StyleSheet.create({
   },
   featureDesc: { fontSize: FONT_SIZES.sm, color: "#94a3b8", marginTop: 2 },
 
-  // CTA
   cta: { width: "100%", alignItems: "center", gap: SPACING.sm },
   primaryBtn: {
     width: "100%",

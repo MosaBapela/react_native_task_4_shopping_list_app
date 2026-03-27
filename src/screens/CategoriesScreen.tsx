@@ -2,22 +2,22 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React, { useState } from "react";
 import {
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import CategoryCard from "../components/CategoryCard";
 import {
-    BORDER_RADIUS,
-    CATEGORIES,
-    COLORS,
-    FONT_SIZES,
-    SPACING
+  BORDER_RADIUS,
+  CATEGORIES,
+  COLORS,
+  FONT_SIZES,
+  SPACING,
 } from "../constants/theme";
 import { RootStackParamList } from "../navigation/AppNavigator";
 
@@ -42,7 +42,6 @@ export default function CategoriesScreen() {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={COLORS.headerBg} />
 
-      {/* Hero Header */}
       <View style={styles.header}>
         <View style={styles.headerTop}>
           <View>
@@ -54,7 +53,6 @@ export default function CategoriesScreen() {
           </View>
         </View>
 
-        {/* Search Bar inside header */}
         <View style={styles.searchWrapper}>
           <Text style={styles.searchIcon}>🔍</Text>
           <TextInput
@@ -72,20 +70,17 @@ export default function CategoriesScreen() {
         </View>
       </View>
 
-      {/* Content */}
       <ScrollView
         style={styles.content}
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        {/* Section label */}
         <Text style={styles.sectionLabel}>
           {searchQuery
             ? `${filteredCategories.length} result${filteredCategories.length !== 1 ? "s" : ""} found`
             : `${CATEGORIES.length} Categories Available`}
         </Text>
 
-        {/* Category List */}
         {filteredCategories.length === 0 ? (
           <View style={styles.emptyState}>
             <Text style={styles.emptyIcon}>🔎</Text>

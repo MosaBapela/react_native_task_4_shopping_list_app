@@ -1,14 +1,18 @@
-// src/redux/slices/shoppingSlice.ts
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AddItemPayload, EditItemPayload, ShoppingItem, ShoppingState } from '../../types';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import {
+  AddItemPayload,
+  EditItemPayload,
+  ShoppingItem,
+  ShoppingState,
+} from "../../types";
 
 const initialState: ShoppingState = {
   items: [],
-  filter: 'all',
+  filter: "all",
 };
 
 const shoppingSlice = createSlice({
-  name: 'shopping',
+  name: "shopping",
   initialState,
   reducers: {
     addItem: (state, action: PayloadAction<AddItemPayload>) => {
@@ -23,8 +27,8 @@ const shoppingSlice = createSlice({
 
     editItem: (state, action: PayloadAction<EditItemPayload>) => {
       const { id, ...updates } = action.payload;
-      const itemIndex = state.items.findIndex(item => item.id === id);
-      
+      const itemIndex = state.items.findIndex((item) => item.id === id);
+
       if (itemIndex !== -1) {
         state.items[itemIndex] = {
           ...state.items[itemIndex],
@@ -34,22 +38,25 @@ const shoppingSlice = createSlice({
     },
 
     deleteItem: (state, action: PayloadAction<string>) => {
-      state.items = state.items.filter(item => item.id !== action.payload);
+      state.items = state.items.filter((item) => item.id !== action.payload);
     },
 
     togglePurchased: (state, action: PayloadAction<string>) => {
-      const item = state.items.find(item => item.id === action.payload);
+      const item = state.items.find((item) => item.id === action.payload);
       if (item) {
         item.isPurchased = !item.isPurchased;
       }
     },
 
-    setFilter: (state, action: PayloadAction<'all' | 'purchased' | 'unpurchased'>) => {
+    setFilter: (
+      state,
+      action: PayloadAction<"all" | "purchased" | "unpurchased">,
+    ) => {
       state.filter = action.payload;
     },
 
     clearPurchasedItems: (state) => {
-      state.items = state.items.filter(item => !item.isPurchased);
+      state.items = state.items.filter((item) => !item.isPurchased);
     },
 
     clearAllItems: (state) => {
