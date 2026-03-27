@@ -44,7 +44,6 @@ export default function ShoppingItem({ item, onEdit }: ShoppingItemProps) {
     <View
       style={[styles.container, item.isPurchased && styles.containerPurchased]}
     >
-      {/* Checkbox */}
       <TouchableOpacity
         style={[styles.checkbox, item.isPurchased && styles.checkboxChecked]}
         onPress={handleTogglePurchased}
@@ -53,7 +52,6 @@ export default function ShoppingItem({ item, onEdit }: ShoppingItemProps) {
         {item.isPurchased && <Text style={styles.checkmark}>✓</Text>}
       </TouchableOpacity>
 
-      {/* Item Details */}
       <View style={styles.details}>
         <Text
           style={[styles.name, item.isPurchased && styles.namePurchased]}
@@ -76,7 +74,6 @@ export default function ShoppingItem({ item, onEdit }: ShoppingItemProps) {
         </Text>
       </View>
 
-      {/* Actions */}
       <View style={styles.actions}>
         <TouchableOpacity
           style={styles.editButton}

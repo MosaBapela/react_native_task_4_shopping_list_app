@@ -1,11 +1,11 @@
 import { Category } from "../types";
 
 export const COLORS = {
-  primary: "#16a34a", // vibrant green
+  primary: "#16a34a",
   primaryDark: "#15803d",
   primaryLight: "#bbf7d0",
-  accent: "#f59e0b", // amber accent
-  background: "#f0fdf4", // very light green tint
+  accent: "#f59e0b",
+  background: "#f0fdf4",
   surface: "#ffffff",
   surfaceAlt: "#f8fafc",
   text: "#0f172a",
@@ -19,7 +19,7 @@ export const COLORS = {
   warning: "#f59e0b",
   warningLight: "#fef3c7",
   cardBackground: "#ffffff",
-  headerBg: "#0f172a", // deep navy header
+  headerBg: "#0f172a",
   headerText: "#ffffff",
   badge: "#16a34a",
   badgeText: "#ffffff",

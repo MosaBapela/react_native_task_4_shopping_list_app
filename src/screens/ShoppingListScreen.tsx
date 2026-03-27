@@ -1,27 +1,26 @@
-﻿// src/screens/ShoppingListScreen.tsx
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
+﻿import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, { useState } from "react";
 import {
-    Alert,
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  Alert,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import AddItemForm from "../components/AddItemForm";
 import EditItemModal from "../components/EditItemModal";
 import ShoppingItem from "../components/ShoppingItem";
 import {
-    BORDER_RADIUS,
-    COLORS,
-    FONT_SIZES,
-    SHADOW,
-    SPACING,
+  BORDER_RADIUS,
+  COLORS,
+  FONT_SIZES,
+  SHADOW,
+  SPACING,
 } from "../constants/theme";
 import { RootStackParamList } from "../navigation/AppNavigator";
 import { clearPurchasedItems } from "../redux/slices/shoppingSlice";
@@ -83,7 +82,6 @@ export default function ShoppingListScreen({ navigation, route }: Props) {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={COLORS.headerBg} />
 
-      {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity
           style={styles.backBtn}
@@ -110,7 +108,6 @@ export default function ShoppingListScreen({ navigation, route }: Props) {
         {purchasedItems === 0 && <View style={styles.headerPlaceholder} />}
       </View>
 
-      {/* Progress Bar */}
       <View style={styles.progressContainer}>
         <View style={styles.progressTrack}>
           <View
@@ -125,7 +122,6 @@ export default function ShoppingListScreen({ navigation, route }: Props) {
         </Text>
       </View>
 
-      {/* Stats Row */}
       <View style={styles.statsRow}>
         <View style={styles.statCard}>
           <Text style={styles.statValue}>{totalItems}</Text>
@@ -147,7 +143,6 @@ export default function ShoppingListScreen({ navigation, route }: Props) {
         </View>
       </View>
 
-      {/* Search + Filter */}
       <View style={styles.searchRow}>
         <View style={styles.searchBox}>
           <Text style={styles.searchIcon}>🔍</Text>
@@ -166,7 +161,6 @@ export default function ShoppingListScreen({ navigation, route }: Props) {
         </View>
       </View>
 
-      {/* Filter Tabs */}
       <View style={styles.filterRow}>
         {(["all", "pending", "done"] as const).map((f) => (
           <TouchableOpacity
@@ -190,7 +184,6 @@ export default function ShoppingListScreen({ navigation, route }: Props) {
         ))}
       </View>
 
-      {/* List */}
       <ScrollView
         style={styles.list}
         contentContainerStyle={styles.listContent}
@@ -226,7 +219,6 @@ export default function ShoppingListScreen({ navigation, route }: Props) {
         <View style={{ height: 100 }} />
       </ScrollView>
 
-      {/* FAB */}
       <TouchableOpacity
         style={styles.fab}
         onPress={() => setShowAddForm(true)}
